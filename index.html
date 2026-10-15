@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tsietsi Mofokeng | Full-Stack Engineer</title>
+<title>Tsietsi Mofokeng | Full-Stack Engineer &amp; Systems Analyst</title>
+<meta name="description" content="Portfolio of Tsietsi Mofokeng, a BSc Computer Science &amp; Information Systems graduate (Wits) building full-stack software with React, Node.js, PostgreSQL and Azure. Open to graduate roles.">
+<meta name="theme-color" content="#05080b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tsietsi Mofokeng | Full-Stack Engineer &amp; Systems Analyst">
+<meta property="og:description" content="Full-stack builder who makes tech fun, playful and beautiful. Projects, skills, certificates and CV.">
+<meta property="og:url" content="https://tsiika165.github.io/portfolio/">
+<meta property="og:image" content="https://tsiika165.github.io/portfolio/avatar.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305080b'/%3E%3Crect x='10' y='14' width='44' height='36' rx='10' fill='%234ee8f5'/%3E%3Ccircle cx='24' cy='32' r='5' fill='%23ffd23f'/%3E%3Ccircle cx='40' cy='32' r='5' fill='%23ffd23f'/%3E%3Cpath d='M25 41q7 6 14 0' stroke='%23ff4fa3' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='8' r='4' fill='%23ff8a2b'/%3E%3C/svg%3E">
+<script>try{if(localStorage.getItem('fun')==='off')document.documentElement.setAttribute('data-fun','off')}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,6 +30,9 @@
     --text-hi:#e7f6f8;
     --text-mid:#8fa8ae;
     --text-low:#4c6067;
+    --purple:#9d5cff;--orange:#ff8a2b;--pink:#ff4fa3;--yellow:#ffd23f;
+    --accent-2:var(--purple);--accent-3:var(--orange);--accent-4:var(--pink);--accent-5:var(--yellow);
+    --grad:linear-gradient(90deg,#22e4ff,#9d5cff,#ff8a2b);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -77,7 +89,7 @@
   .bracket::before,.bracket::after,
   .bracket .bl,.bracket .br{
     content:"";position:absolute;width:14px;height:14px;
-    border:2px solid var(--cyan);
+    border:2px solid var(--bc,var(--cyan));
     opacity:0.85;
   }
   .bracket::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
@@ -250,6 +262,107 @@
     border-top:1px solid var(--line);position:relative;z-index:1;
   }
 
+
+  /* ===== playful upgrade: professional first, playful second ===== */
+  .bg-glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+    radial-gradient(900px 600px at 90% -5%,rgba(157,92,255,0.20),transparent 60%),
+    radial-gradient(800px 600px at -5% 105%,rgba(34,228,255,0.12),transparent 60%),
+    radial-gradient(500px 400px at 100% 100%,rgba(255,138,43,0.10),transparent 60%);}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--cyan);}
+  .tagline{color:var(--text-mid);font-size:16px;margin:-4px 0 22px;max-width:480px;}
+  .hero{padding:112px 24px 56px;}
+  .core-wrap{width:220px;height:220px;margin-bottom:22px;}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4.2rem);margin-bottom:14px;}
+  .hero .role{margin-bottom:20px;}
+  .status-line{margin-bottom:30px;}
+  .eyebrow::before{height:2px;background:var(--grad);}
+  h2.section-title::after{content:"";display:block;width:56px;height:3px;border-radius:3px;background:var(--grad);margin-top:12px;}
+  .timeline::before{width:2px;background:linear-gradient(var(--cyan),var(--accent-2),var(--accent-3));}
+  .chip{transition:transform 0.2s,border-color 0.2s,color 0.2s;}
+  .chip:hover{transform:translateY(-2px);border-color:var(--bc,var(--cyan));color:var(--text-hi);}
+  .sys-card .cat{color:var(--bc,var(--cyan));}
+  .sys-card:nth-child(6n+1){--bc:var(--cyan);}
+  .sys-card:nth-child(6n+2){--bc:var(--accent-2);}
+  .sys-card:nth-child(6n+3){--bc:var(--accent-3);}
+  .sys-card:nth-child(6n+4){--bc:var(--accent-4);}
+  .sys-card:nth-child(6n+5){--bc:var(--accent-5);}
+  .sys-card:nth-child(6n+6){--bc:#4d7cff;}
+
+  /* Technoid mascot */
+  .technoid{position:absolute;right:-132px;bottom:-4px;width:104px;background:none;border:0;padding:0;cursor:pointer;color:inherit;}
+  .technoid svg{display:block;width:100%;height:auto;overflow:visible;}
+  .technoid:focus-visible{outline:2px solid var(--cyan);outline-offset:6px;border-radius:12px;}
+  .technoid .bubble{position:absolute;bottom:calc(100% + 6px);right:-8px;width:max-content;max-width:190px;
+    background:var(--text-hi);color:var(--void);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+    line-height:1.35;padding:8px 12px;border-radius:12px;text-align:left;}
+  .technoid .bubble::after{content:"";position:absolute;right:30px;bottom:-5px;width:10px;height:10px;background:var(--text-hi);transform:rotate(45deg);}
+  .technoid .arm{transform-origin:113px 118px;animation:t-wave 5s ease-in-out 1.2s infinite;}
+  .technoid .eye{transform-box:fill-box;transform-origin:center;animation:t-blink 5.5s infinite;}
+  .technoid .ant{animation:t-ant 2s ease-in-out infinite;}
+  .technoid:hover svg{animation:t-wiggle 0.6s ease-in-out;}
+  @keyframes t-wave{0%,72%,100%{transform:rotate(0deg);}12%,36%,60%{transform:rotate(-135deg);}24%,48%{transform:rotate(-108deg);}}
+  @keyframes t-blink{0%,92%,100%{transform:scaleY(1);}96%{transform:scaleY(0.1);}}
+  @keyframes t-ant{0%,100%{opacity:1;}50%{opacity:0.4;}}
+  @keyframes t-wiggle{0%,100%{transform:rotate(0);}25%{transform:rotate(-5deg);}75%{transform:rotate(5deg);}}
+  .comms-bot{display:block;width:64px;height:auto;margin:0 auto 16px;}
+
+  /* product-style project cards */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:20px;}
+  .proj{--acc:var(--cyan);--bc:var(--acc);display:flex;flex-direction:column;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s;}
+  .proj:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 12px 32px -12px var(--acc);}
+  .proj-bar{height:3px;background:linear-gradient(90deg,var(--acc),transparent);}
+  .proj-body{padding:22px 24px;display:flex;flex-direction:column;gap:14px;flex:1;}
+  .proj-top{display:flex;gap:14px;align-items:flex-start;}
+  .proj-icon{width:44px;height:44px;border-radius:12px;background:var(--acc);color:var(--void);display:grid;place-items:center;flex-shrink:0;box-shadow:0 0 18px -4px var(--acc);}
+  .proj-icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .proj-title{flex:1;min-width:0;}
+  .proj-title h3{font-size:1.05rem;font-weight:600;line-height:1.3;}
+  .proj .log-role{margin:4px 0 0;}
+  .proj-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .proj .tag{color:var(--acc);border:1px solid var(--acc);background:rgba(255,255,255,0.03);}
+  .proj p.desc{color:var(--text-mid);font-size:14px;margin:0;}
+  .tech{display:flex;flex-wrap:wrap;gap:6px;}
+  .tech span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-hi);border:1px solid var(--line);background:rgba(255,255,255,0.03);padding:4px 9px;border-radius:999px;}
+  .tech span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:6px;}
+  .proj-links{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding-top:4px;}
+  .proj-links a{font-family:'JetBrains Mono',monospace;font-size:12px;padding:7px 14px;border:1px solid var(--acc);color:var(--acc);border-radius:999px;transition:background 0.2s;}
+  .proj-links a:hover,.proj-links a:focus-visible{background:rgba(255,255,255,0.08);outline:none;}
+  .proj-links .muted{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-low);}
+  .proj.invite{--acc:var(--accent-2);background:transparent;border-style:dashed;text-align:center;}
+  .proj.invite .proj-body{align-items:center;justify-content:center;}
+  .proj.invite h3{font-size:1.15rem;}
+
+  /* fun mode switch */
+  .fun-toggle{position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;background:rgba(10,17,25,0.92);
+    color:var(--text-mid);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:11px;letter-spacing:0.08em;cursor:pointer;backdrop-filter:blur(8px);}
+  .fun-toggle:hover,.fun-toggle:focus-visible{border-color:var(--cyan);color:var(--text-hi);outline:none;}
+  .fun-dot{width:8px;height:8px;border-radius:50%;background:var(--grad);}
+  html[data-fun="off"] .fun-dot{background:var(--text-low);}
+
+  /* calm mode: the original quiet look */
+  html[data-fun="off"]{--accent-2:var(--cyan);--accent-3:var(--amber);--accent-4:var(--cyan);--accent-5:var(--cyan);--grad:linear-gradient(90deg,var(--cyan),var(--cyan));}
+  html[data-fun="off"] .technoid,html[data-fun="off"] .bg-glow,html[data-fun="off"] .comms-bot{display:none;}
+  html[data-fun="off"] .grad-text{background:none;-webkit-text-fill-color:currentColor;color:var(--text-hi);}
+  html[data-fun="off"] .proj:hover{transform:none;box-shadow:none;}
+  html[data-fun="off"] .sys-card{--bc:var(--cyan) !important;}
+
+  @media (max-width:720px){
+    .technoid{right:-4px;bottom:-8px;width:68px;}
+    .hero{padding-top:92px;}
+    .core-wrap{width:190px;height:190px;margin-bottom:16px;}
+    .hero h1{margin-bottom:10px;}
+    .tagline{font-size:15px;margin-bottom:18px;}
+    .status-line{margin-bottom:22px;}
+    .technoid .bubble{display:none;}
+    .fun-toggle{right:10px;bottom:10px;padding:7px 11px;}
+    .proj-body{padding:20px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .technoid .arm,.technoid .eye,.technoid .ant,.technoid:hover svg{animation:none !important;}
+    .proj,.chip{transition:none;}
+    .proj:hover,.chip:hover{transform:none;}
+  }
+
   .reveal{transition:opacity 0.7s ease,transform 0.7s ease;}
   .reveal.pre{opacity:0;transform:translateY(24px);}
   .reveal.pre.in{opacity:1;transform:translateY(0);}
@@ -275,6 +388,7 @@
 </head>
 <body>
 
+<div class="bg-glow"></div>
 <div class="bg-grid"></div>
 
 <div class="topbar">
@@ -298,10 +412,10 @@
       <defs><clipPath id="avatarClip"><circle cx="110" cy="110" r="44"/></clipPath></defs>
       <circle cx="110" cy="110" r="100" fill="none" stroke="#1c2b33" stroke-width="1"/>
       <g class="ring-outer">
-        <circle cx="110" cy="110" r="90" fill="none" stroke="#4ee8f5" stroke-width="1" opacity="0.5" stroke-dasharray="4 10"/>
+        <circle cx="110" cy="110" r="90" fill="none" stroke="#9d5cff" stroke-width="1.5" opacity="0.75" stroke-dasharray="4 10"/>
       </g>
       <g class="ring-inner">
-        <circle cx="110" cy="110" r="70" fill="none" stroke="#4ee8f5" stroke-width="1" opacity="0.35" stroke-dasharray="2 6"/>
+        <circle cx="110" cy="110" r="70" fill="none" stroke="#ff8a2b" stroke-width="1.5" opacity="0.6" stroke-dasharray="2 6"/>
       </g>
       <circle cx="110" cy="110" r="48" fill="none" stroke="#1f5a63" stroke-width="1"/>
       <g class="core-photo">
@@ -309,10 +423,31 @@
         <circle cx="110" cy="110" r="44" fill="none" stroke="#4ee8f5" stroke-width="1.5" opacity="0.9"/>
       </g>
     </svg>
+    <button type="button" class="technoid" id="technoid" aria-label="Technoid, my mascot. Click for a message.">
+      <span class="bubble" id="botBubble">Hi, I'm Tsietsi!</span>
+      <svg viewBox="0 0 130 170" aria-hidden="true" focusable="false">
+        <rect x="62" y="12" width="6" height="14" fill="#8fa8ae"/>
+        <circle class="ant" cx="65" cy="9" r="7" fill="#ff8a2b"/>
+        <rect x="2" y="48" width="12" height="34" rx="5" fill="#ff4fa3"/>
+        <rect x="116" y="48" width="12" height="34" rx="5" fill="#ff4fa3"/>
+        <rect x="10" y="22" width="110" height="84" rx="24" fill="#4ee8f5"/>
+        <rect x="22" y="34" width="86" height="60" rx="14" fill="#05080b"/>
+        <circle class="eye" cx="47" cy="56" r="9" fill="#ffd23f"/>
+        <circle class="eye" cx="83" cy="56" r="9" fill="#ffd23f"/>
+        <path d="M52 75 Q65 87 78 75" stroke="#ff4fa3" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="34" cy="75" r="5" fill="#ff4fa3" opacity="0.8"/><circle cx="96" cy="75" r="5" fill="#ff4fa3" opacity="0.8"/>
+        <rect x="4" y="116" width="14" height="38" rx="7" fill="#9d5cff" transform="rotate(14 11 120)"/>
+        <rect x="22" y="110" width="86" height="52" rx="14" fill="#9d5cff"/>
+        <rect x="36" y="120" width="58" height="32" rx="8" fill="#05080b"/>
+        <circle cx="48" cy="136" r="5" fill="#ff4fa3"/><circle cx="65" cy="136" r="5" fill="#ffd23f"/><circle cx="82" cy="136" r="5" fill="#4ee8f5"/>
+        <g class="arm"><rect x="106" y="114" width="14" height="38" rx="7" fill="#9d5cff"/><circle cx="113" cy="154" r="8" fill="#4ee8f5"/></g>
+      </svg>
+    </button>
   </div>
 
-  <h1 class="display">TSIETSI<br>MOFOKENG</h1>
+  <h1 class="display">TSIETSI<br><span class="grad-text">MOFOKENG</span></h1>
   <div class="role mono">FULL-STACK ENGINEER <span>//</span> SYSTEMS ANALYST</div>
+  <p class="tagline">I build full-stack software and make tech fun, playful and beautiful.</p>
 
   <div class="status-line mono">
     <span class="live-dot"></span>
@@ -426,66 +561,81 @@
   <h2 class="section-title display">Projects</h2>
   <p class="section-desc">Real systems, shipped for real users: academic, client, and independent.</p>
 
-  <div class="bracket log-card"><div class="bl"></div><div class="br"></div>
-    <div class="log-head">
-      <h3>Scoutify</h3>
-      <div class="log-meta"><span class="tag progress">IN PROGRESS</span><span class="year">2026</span></div>
-    </div>
-    <div class="log-role">Founder &amp; Developer, in active development</div>
-    <p class="desc">A video-first sports talent discovery platform connecting grassroots footballers with
-    formal scouting pipelines in South Africa. Building the Supabase backend and core athlete/scout loop
-    first, with an AI highlight-reel feature to follow.</p>
-  </div>
-
-  <div class="bracket log-card"><div class="bl"></div><div class="br"></div>
-    <div class="log-head">
-      <h3>Sales Reporting &amp; Analytics System</h3>
-      <div class="log-meta"><span class="tag live">CLIENT PROJECT</span><span class="year">2025</span></div>
-    </div>
-    <div class="log-role">Systems Analyst &amp; Developer (team project), code private per client request</div>
-    <p class="desc">Collaborated with a live client to gather and analyse manual sales and commission
-    processes, then implemented automated commission calculations, a relational Supabase database, and
-    dashboards tracking performance and KPIs.</p>
-  </div>
-
-  <div class="bracket log-card"><div class="bl"></div><div class="br"></div>
-    <div class="log-head">
-      <h3>Sekgutlong School Website &amp; Management System</h3>
-      <div class="log-meta"><span class="tag live">LIVE</span><span class="year">2026</span></div>
-    </div>
-    <p class="desc">Full-stack school management platform for a real high school, built with React, Vite, and
-    Tailwind CSS on the frontend, Supabase Auth for role-based access, and a relational PostgreSQL
-    data model. Deployed on Vercel with GitHub-integrated CI/CD.</p>
-    <div class="log-links">
-      <a href="https://github.com/Tsiika165/sekgutlong-school-website" target="_blank" rel="noopener">[ REPO ]</a>
-      <a href="https://sekgutlong.vercel.app" target="_blank" rel="noopener">[ LIVE SITE ]</a>
-    </div>
-  </div>
-
-  <div class="bracket log-card"><div class="bl"></div><div class="br"></div>
-    <div class="log-head">
-      <h3>Student Results Management System</h3>
-      <div class="log-meta"><span class="tag live">ACADEMIC</span><span class="year">2026</span></div>
-    </div>
-    <p class="desc">REST APIs built with Node.js and Express.js, backed by a relational Supabase
-    database, modernising student records, subjects, and grades management with a React frontend for
-    real-time data entry and reporting.</p>
-    <div class="log-links">
-      <a href="https://github.com/Tsiika165/student-results-system" target="_blank" rel="noopener">[ REPO ]</a>
-    </div>
-  </div>
-
-  <div class="bracket log-card"><div class="bl"></div><div class="br"></div>
-    <div class="log-head">
-      <h3>Constitutional Archive Data Management System</h3>
-      <div class="log-meta"><span class="tag archived">TEAM PROJECT</span><span class="year">2025</span></div>
-    </div>
-    <p class="desc">Team-built platform for managing and searching constitutional archives, built with React,
-    Node.js, Express, and MongoDB, originally deployed on Azure. Contributed requirements specs, UML
-    diagrams, Azure Cognitive Search integration, and frontend testing.</p>
-    <div class="log-links">
-      <a href="https://github.com/Heisenburg-z/Constitutional-Archive-Data-Management-and-Search-Interface" target="_blank" rel="noopener">[ REPO ]</a>
-    </div>
+  <div class="proj-grid">
+    <article class="bracket proj" style="--acc:var(--accent-3);"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-top">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+          <div class="proj-title"><h3>Scoutify</h3><div class="log-role">Founder &amp; Developer, in active development</div></div>
+        </div>
+        <div class="proj-meta"><span class="tag progress">IN PROGRESS</span><span class="year">2026</span></div>
+        <p class="desc">A video-first sports talent discovery platform connecting grassroots footballers with formal scouting pipelines in South Africa. Building the Supabase backend and core athlete/scout loop first, with an AI highlight-reel feature to follow.</p>
+        <div class="tech"><span>Supabase</span><span>PostgreSQL</span><span>AI highlights (planned)</span></div>
+        <div class="proj-links"><span class="muted">In active development</span></div>
+      </div>
+    </article>
+    <article class="bracket proj" style="--acc:var(--accent-4);"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-top">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="proj-title"><h3>Sales Reporting &amp; Analytics System</h3><div class="log-role">Systems Analyst &amp; Developer (team project)</div></div>
+        </div>
+        <div class="proj-meta"><span class="tag live">CLIENT PROJECT</span><span class="year">2025</span></div>
+        <p class="desc">Collaborated with a live client to gather and analyse manual sales and commission processes, then implemented automated commission calculations, a relational Supabase database, and dashboards tracking performance and KPIs.</p>
+        <div class="tech"><span>Supabase</span><span>PostgreSQL</span><span>Dashboards</span><span>Requirements analysis</span></div>
+        <div class="proj-links"><span class="muted">Code private per client request</span></div>
+      </div>
+    </article>
+    <article class="bracket proj" style="--acc:var(--cyan);"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-top">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div class="proj-title"><h3>Sekgutlong School Website &amp; Management System</h3></div>
+        </div>
+        <div class="proj-meta"><span class="tag live">LIVE</span><span class="year">2026</span></div>
+        <p class="desc">Full-stack school management platform for a real high school, with Supabase Auth for role-based access and a relational PostgreSQL data model. Deployed on Vercel with GitHub-integrated CI/CD.</p>
+        <div class="tech"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Supabase Auth</span><span>Vercel</span></div>
+        <div class="proj-links"><a href="https://sekgutlong.vercel.app" target="_blank" rel="noopener">[ LIVE SITE ]</a><a href="https://github.com/Tsiika165/sekgutlong-school-website" target="_blank" rel="noopener">[ REPO ]</a></div>
+      </div>
+    </article>
+    <article class="bracket proj" style="--acc:var(--accent-5);"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-top">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div>
+          <div class="proj-title"><h3>Student Results Management System</h3></div>
+        </div>
+        <div class="proj-meta"><span class="tag live">ACADEMIC</span><span class="year">2026</span></div>
+        <p class="desc">REST APIs backed by a relational Supabase database, modernising student records, subjects, and grades management, with a React frontend for real-time data entry and reporting.</p>
+        <div class="tech"><span>Node.js</span><span>Express.js</span><span>Supabase</span><span>React</span></div>
+        <div class="proj-links"><a href="https://github.com/Tsiika165/student-results-system" target="_blank" rel="noopener">[ REPO ]</a></div>
+      </div>
+    </article>
+    <article class="bracket proj" style="--acc:var(--accent-2);"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-top">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></div>
+          <div class="proj-title"><h3>Constitutional Archive Data Management System</h3></div>
+        </div>
+        <div class="proj-meta"><span class="tag archived">TEAM PROJECT</span><span class="year">2025</span></div>
+        <p class="desc">Team-built platform for managing and searching constitutional archives, originally deployed on Azure. Contributed requirements specs, UML diagrams, Azure Cognitive Search integration, and frontend testing.</p>
+        <div class="tech"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Azure Cognitive Search</span></div>
+        <div class="proj-links"><a href="https://github.com/Heisenburg-z/Constitutional-Archive-Data-Management-and-Search-Interface" target="_blank" rel="noopener">[ REPO ]</a></div>
+      </div>
+    </article>
+    <article class="bracket proj invite"><div class="bl"></div><div class="br"></div>
+      <div class="proj-bar"></div>
+      <div class="proj-body">
+        <div class="proj-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <h3>Have a project in mind?</h3>
+        <p class="desc">I'd love to hear about it. Let's build something good.</p>
+        <div class="proj-links"><a href="#comms">[ GET IN TOUCH ]</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -603,6 +753,14 @@
 
 <section id="comms" class="comms reveal">
   <div class="bracket comms-panel"><div class="bl"></div><div class="br"></div>
+    <svg class="comms-bot" viewBox="0 0 130 112" aria-hidden="true" focusable="false">
+      <rect x="62" y="12" width="6" height="14" fill="#8fa8ae"/><circle cx="65" cy="9" r="7" fill="#ff8a2b"/>
+      <rect x="2" y="48" width="12" height="34" rx="5" fill="#ff4fa3"/><rect x="116" y="48" width="12" height="34" rx="5" fill="#ff4fa3"/>
+      <rect x="10" y="22" width="110" height="84" rx="24" fill="#4ee8f5"/><rect x="22" y="34" width="86" height="60" rx="14" fill="#05080b"/>
+      <rect x="38" y="60" width="18" height="6" rx="3" fill="#ffd23f"/><circle cx="83" cy="56" r="9" fill="#ffd23f"/>
+      <path d="M52 75 Q65 87 78 75" stroke="#ff4fa3" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <circle cx="34" cy="75" r="5" fill="#ff4fa3" opacity="0.8"/><circle cx="96" cy="75" r="5" fill="#ff4fa3" opacity="0.8"/>
+    </svg>
     <div class="eyebrow mono" style="justify-content:center;">COMMS</div>
     <h2 class="display">Let's build something.</h2>
     <p>Open to Graduate Software Engineer, Full-Stack Developer, and Systems Analyst roles.</p>
@@ -626,8 +784,10 @@
   </div>
 </div>
 
+<button type="button" class="fun-toggle mono" id="funToggle" aria-pressed="true" title="Switch the playful extras on or off"><span class="fun-dot"></span><span id="funLabel">FUN MODE: ON</span></button>
+
 <footer>
-  © 2026 TSIETSI MOFOKENG // JOHANNESBURG, ZA // SYSTEM STATUS: ONLINE
+  © 2026 TSIETSI MOFOKENG // JOHANNESBURG, ZA // SYSTEM STATUS: ONLINE // STILL BUILDING
 </footer>
 
 <script>
@@ -673,6 +833,20 @@
     closeBtn.addEventListener('click',close);
     modal.addEventListener('click',e=>{if(e.target===modal)close();});
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))close();});
+  })();
+
+  (function(){
+    var root=document.documentElement,btn=document.getElementById('funToggle'),lab=document.getElementById('funLabel');
+    function apply(on){root.setAttribute('data-fun',on?'on':'off');btn.setAttribute('aria-pressed',on?'true':'false');lab.textContent='FUN MODE: '+(on?'ON':'OFF');}
+    apply(root.getAttribute('data-fun')!=='off');
+    btn.addEventListener('click',function(){
+      var on=root.getAttribute('data-fun')!=='off';apply(!on);
+      try{localStorage.setItem('fun',on?'off':'on');}catch(e){}
+    });
+    var bot=document.getElementById('technoid'),bub=document.getElementById('botBubble');
+    var msgs=["Hi, I'm Tsietsi!","Beep boop: scroll to see my work.","I build things that are fun to use.","Need my CV? One click, right up there."];
+    var n=0;
+    if(bot&&bub){bot.addEventListener('click',function(){n=(n+1)%msgs.length;bub.textContent=msgs[n];});}
   })();
 </script>
 
